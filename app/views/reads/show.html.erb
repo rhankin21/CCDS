@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @read.person %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @read.book %>
+</p>
+
+<%= link_to 'Edit', edit_read_path(@read) %> |
+<%= link_to 'Back', reads_path %>

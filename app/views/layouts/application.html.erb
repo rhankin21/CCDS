@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CCDS</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1> CCDS BoB </h1>
+    <%= link_to 'New Book', new_book_path %>
+    <%= link_to 'New Member', new_person_path %>
+    <%= link_to 'New Progress', new_read_path %>
+    <%= link_to 'Progress List', reads_path %>
+    <%= link_to 'Member List', people_path %>
+    <%= link_to 'Book List', books_path %>
+
+
+    <%= yield %>
+  </body>
+</html>
