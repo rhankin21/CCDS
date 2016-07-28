@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160722134732) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
     t.string   "author"
     t.string   "URL"
@@ -30,8 +33,10 @@ ActiveRecord::Schema.define(version: 20160722134732) do
     t.integer  "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_reads_on_book_id"
-    t.index ["person_id"], name: "index_reads_on_person_id"
+    t.index ["book_id"], name: "index_reads_on_book_id", using: :btree
+    t.index ["person_id"], name: "index_reads_on_person_id", using: :btree
   end
 
+  add_foreign_key "reads", "books"
+  add_foreign_key "reads", "people"
 end
