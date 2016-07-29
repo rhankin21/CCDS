@@ -14,7 +14,8 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= image_tag(book.src, height: "60") %> </td>
+        <td><%= image_tag(book.src, height: "60") if book.src %> </td>
+
         <td><%= book.author %></td>
         <td><a href="<%= book.URL %>">Buy it here!</a></td>
         <td><%= link_to 'Show', book %></td>
