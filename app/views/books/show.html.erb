@@ -9,6 +9,10 @@
   <strong>Url:</strong>
   <%= @book.URL %>
 </p>
+<p>
+  <%= image_tag(@book.src) %>
+
+</p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
